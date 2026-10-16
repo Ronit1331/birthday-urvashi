@@ -1,513 +1,1220 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday, Special One! 🧸💖</title>
+<title>Happy Birthday Devi Urvashi! 🧸💖</title>
 
 <style>
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 :root {
-    --pink: #ff4f91;
-    --purple: #9b6bff;
-    --ink: #78345e;
+  --pink: #ff4f91;
+  --purple: #9b6bff;
+  --ink: #78345e;
 }
 
 body {
-    margin: 0;
-    font-family: "Trebuchet MS", Arial, sans-serif;
-    color: var(--ink);
-    text-align: center;
-    background: linear-gradient(135deg, #ffe0ef, #f1e1ff, #e0f6ff);
-    overflow-x: hidden;
-    min-height: 100vh;
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  color: var(--ink);
+  text-align: center;
+  background: linear-gradient(135deg, #ffe0ef, #f1e1ff, #e0f6ff);
+  overflow-x: hidden;
 }
 
 button {
-    font: inherit;
-    cursor: pointer;
+  font: inherit;
+  cursor: pointer;
 }
 
-.container {
-    max-width: 850px;
-    margin: auto;
-    padding: 20px 13px 45px;
+.page {
+  display: none;
+  max-width: 850px;
+  width: 100%;
+  margin: auto;
+  padding: 25px 14px 45px;
+  animation: pageIn .5s ease;
+}
+
+.page.active {
+  display: block;
+}
+
+@keyframes pageIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .panel {
-    background: #ffffffd9;
-    border: 2px solid white;
-    border-radius: 24px;
-    padding: 22px 15px;
-    margin: 17px 0;
-    box-shadow: 0 10px 28px #bb6e9d1c;
+  background: #ffffffdf;
+  border: 2px solid white;
+  border-radius: 25px;
+  padding: 25px 16px;
+  margin: 18px 0;
+  box-shadow: 0 10px 30px #bb6e9d20;
 }
 
 h1 {
-    font-size: clamp(33px, 8vw, 55px);
-    color: #f03787;
-    text-shadow: 2px 3px white;
-    margin: 13px 0;
+  font-size: clamp(34px, 8vw, 55px);
+  color: #f03787;
+  text-shadow: 2px 3px white;
+  margin: 15px 0;
 }
 
 h2 {
-    color: #d83f8b;
+  color: #d83f8b;
 }
 
 p {
-    line-height: 1.65;
-}
-
-.hero {
-    padding: 25px 10px 5px;
+  line-height: 1.7;
 }
 
 .tag {
-    display: inline-block;
-    padding: 9px 16px;
-    background: white;
-    border-radius: 25px;
-    font-size: 12px;
-    letter-spacing: 1px;
+  display: inline-block;
+  padding: 9px 16px;
+  background: white;
+  border-radius: 25px;
+  font-size: 12px;
+  letter-spacing: 1px;
 }
 
 .bears {
-    font-size: 54px;
-    animation: bounce 2s infinite;
+  font-size: 55px;
+  animation: bounce 2s infinite;
 }
 
 @keyframes bounce {
-    50% {
-        transform: translateY(-9px);
-    }
+  50% {
+    transform: translateY(-9px);
+  }
 }
 
 .btn {
-    border: 0;
-    border-radius: 30px;
-    padding: 13px 19px;
-    margin: 5px;
-    color: white;
-    background: linear-gradient(120deg, #ff4f91, #a45cff);
-    box-shadow: 0 5px 13px #b55a9b25;
+  border: none;
+  border-radius: 30px;
+  padding: 13px 21px;
+  margin: 7px 4px;
+  color: white;
+  background: linear-gradient(120deg, #ff4f91, #a45cff);
+  box-shadow: 0 5px 13px #b55a9b25;
+  transition: transform .2s;
+}
+
+.btn:hover:not(:disabled) {
+  transform: translateY(-2px);
 }
 
 .btn.secondary {
-    background: white;
-    color: #c43c87;
+  background: white;
+  color: #c43c87;
+  border: 1px solid #ffc4e0;
 }
 
 .btn:disabled {
-    opacity: 0.5;
+  opacity: .45;
+  cursor: not-allowed;
 }
 
-/* CIRCULAR PHOTO FRAME */
-
 .center-photo {
-    width: 170px;
-    height: 170px;
-    margin: 18px auto 22px;
-    border-radius: 50%;
-    padding: 6px;
-    background: linear-gradient(
-        135deg,
-        #ff4f91,
-        #b68aff,
-        #ffd166
-    );
-    box-shadow:
-        0 0 0 5px #ffffffaa,
-        0 10px 30px #d85b9a55;
-    animation: photoGlow 2.5s ease-in-out infinite alternate;
-    overflow: hidden;
+  width: 175px;
+  height: 175px;
+  margin: 20px auto;
+  padding: 6px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff4f91, #b68aff, #ffd166);
+  box-shadow: 0 0 0 5px #ffffffaa, 0 10px 30px #d85b9a55;
+  animation: photoGlow 2.5s ease-in-out infinite alternate;
+  overflow: hidden;
 }
 
 .center-photo img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid white;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid white;
 }
 
 @keyframes photoGlow {
-    from {
-        transform: scale(1);
-        box-shadow:
-            0 0 0 5px #ffffffaa,
-            0 10px 25px #d85b9a44;
-    }
-
-    to {
-        transform: scale(1.04);
-        box-shadow:
-            0 0 0 7px #ffffffcc,
-            0 12px 35px #d85b9a88;
-    }
+  to {
+    transform: scale(1.04);
+    box-shadow: 0 0 0 7px #ffffffcc,
+                0 12px 35px #d85b9a88;
+  }
 }
 
-/* BIRTHDAY COUNTDOWN */
+/* Progress indicators */
+
+.progress-track {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 7px;
+  padding: 15px 8px 0;
+}
+
+.progress-dot {
+  padding: 8px 11px;
+  border-radius: 20px;
+  background: #ffffffa8;
+  color: #ad76a0;
+  font-size: 12px;
+}
+
+.progress-dot.current {
+  background: #ff4f91;
+  color: white;
+}
+
+.progress-dot.done {
+  background: #e1f8e8;
+  color: #26754a;
+}
+
+/* Countdown */
 
 .countdown {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 8px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin: 20px 0;
 }
 
 .time {
-    background: linear-gradient(135deg, #ff79ae, #ad8aff);
-    color: white;
-    border-radius: 15px;
-    padding: 13px 3px;
+  padding: 14px 3px;
+  border-radius: 15px;
+  color: white;
+  background: linear-gradient(135deg, #ff79ae, #ad8aff);
 }
 
 .time span {
-    display: block;
-    font-size: clamp(23px, 5vw, 33px);
-    font-weight: bold;
+  display: block;
+  font-size: clamp(23px, 5vw, 34px);
+  font-weight: bold;
 }
 
 .time small {
-    font-size: 12px;
+  font-size: 12px;
 }
 
-/* BALLOON GAME */
+.notice {
+  padding: 15px;
+  border-radius: 16px;
+  background: #fff0f7;
+}
+
+/* Balloons */
 
 .balloon-area {
-    min-height: 170px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 13px;
-    background: linear-gradient(#eee6ff, #fff0f7);
-    border-radius: 18px;
-    padding: 15px;
-    margin: 15px 0;
+  min-height: 175px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 13px;
+  background: linear-gradient(#eee6ff, #fff0f7);
+  border-radius: 20px;
+  padding: 18px;
+  margin: 18px 0;
 }
 
 .balloon {
-    position: relative;
-    width: 53px;
-    height: 68px;
-    border-radius: 50%;
-    border: 2px solid #ffffffaa;
-    cursor: pointer;
-    box-shadow:
-        inset -7px -5px 10px #00000012,
-        inset 6px 4px 8px #ffffff80;
-    animation: balloonFloat 1.8s ease-in-out infinite alternate;
-    touch-action: manipulation;
+  position: relative;
+  width: 57px;
+  height: 72px;
+  border-radius: 50%;
+  border: 2px solid #ffffffaa;
+  box-shadow: inset -7px -5px 10px #00000012,
+              inset 6px 4px 8px #ffffff80;
+  animation: balloonFloat 1.8s ease-in-out infinite alternate;
 }
 
-.balloon:after {
-    content: "";
-    position: absolute;
-    bottom: -7px;
-    left: 19px;
-    border-left: 6px solid transparent;
-    border-right: 6px solid transparent;
-    border-top: 9px solid var(--tail);
+.balloon::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 20px;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 9px solid var(--tail);
 }
 
 .balloon.pop {
-    animation: pop 0.2s forwards;
-    pointer-events: none;
+  animation: pop .25s forwards;
+  pointer-events: none;
 }
 
 @keyframes balloonFloat {
-    to {
-        transform: translateY(-8px) rotate(4deg);
-    }
+  to {
+    transform: translateY(-8px) rotate(4deg);
+  }
 }
 
 @keyframes pop {
-    to {
-        transform: scale(1.6);
-        opacity: 0;
-    }
+  to {
+    transform: scale(1.6);
+    opacity: 0;
+  }
 }
 
 #letterBoxes {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 4px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4px;
+  min-height: 45px;
 }
 
 .letter {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 33px;
-    height: 41px;
-    border-radius: 9px;
-    background: #ffd2e6;
-    color: #bd2875;
-    font-size: 20px;
-    font-weight: bold;
-    animation: appear 0.35s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 42px;
+  border-radius: 9px;
+  background: #ffd2e6;
+  color: #bd2875;
+  font-size: 20px;
+  font-weight: bold;
+  animation: pageIn .3s ease;
 }
 
 .letter.space {
-    background: transparent;
-    box-shadow: none;
-    width: 13px;
+  width: 13px;
+  background: transparent;
 }
 
-@keyframes appear {
-    from {
-        opacity: 0;
-        transform: scale(0.3);
-    }
+/* Birthday Letter */
 
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
+.letter-paper {
+  background: #fff7d9;
+  border-radius: 18px;
+  padding: 22px;
+  margin: 20px 0;
+  box-shadow: 0 6px 20px #a56d8b1c;
+  text-align: left;
 }
 
-#complete {
-    display: none;
+#birthdayLetter {
+  display: none;
 }
 
-.bigTitle {
-    font-size: clamp(30px, 7vw, 48px);
-    color: #ed3486;
-    animation: bounce 1.5s infinite;
-}
-
-/* BIRTHDAY LETTER */
-
-.letterPaper {
-    background: #fff7d9;
-    padding: 22px;
-    border-radius: 15px;
-    box-shadow: 0 6px 20px #a56d8b1c;
-}
-
-#loveLetter,
-#surprise {
-    display: none;
-    animation: appear 0.5s;
-}
-
-/* BIRTHDAY CAKE */
+/* Cake and wishes */
 
 .cake {
-    font-size: 85px;
-    cursor: pointer;
-    display: inline-block;
+  display: inline-block;
+  font-size: 100px;
+  cursor: pointer;
+  user-select: none;
 }
-
-/* BIRTHDAY WISHES */
 
 .quote {
-    font-size: 18px;
-    min-height: 52px;
-    color: #b23e8a;
-    font-weight: bold;
+  color: #b23e8a;
+  font-size: 18px;
+  font-weight: bold;
+  min-height: 50px;
 }
 
-/* CONFETTI AND HEARTS */
+/* Confetti and Hearts */
 
-.heart,
-.confetti {
-    position: fixed;
-    pointer-events: none;
-    z-index: 40;
+.heart, .confetti {
+  position: fixed;
+  pointer-events: none;
+  z-index: 100;
 }
 
 .heart {
-    bottom: -35px;
-    animation: floatUp 4s linear forwards;
+  bottom: -35px;
+  animation: floatUp 4s linear forwards;
 }
 
 .confetti {
-    top: -25px;
-    animation: fall 3.5s linear forwards;
+  top: -25px;
+  animation: fall 3.5s linear forwards;
 }
 
 @keyframes floatUp {
-    to {
-        transform: translateY(-110vh) rotate(360deg);
-        opacity: 0;
-    }
+  to {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
 }
 
 @keyframes fall {
-    to {
-        transform: translateY(110vh) rotate(720deg);
-        opacity: 0;
-    }
+  to {
+    transform: translateY(110vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+#finalMessage {
+  display: none;
+}
+
+.big-title {
+  font-size: clamp(30px, 7vw, 48px);
+  color: #ed3486;
+  animation: bounce 1.5s infinite;
 }
 
 footer {
-    font-size: 13px;
-    padding: 20px;
-    opacity: 0.75;
+  padding: 20px;
+  font-size: 13px;
+  opacity: .75;
 }
 
-/* MOBILE RESPONSIVE */
+@media(max-width: 390px) {
+  .panel {
+    padding: 19px 10px;
+  }
 
-@media (max-width: 390px) {
-    .panel {
-        padding: 17px 9px;
-    }
+  .time small {
+    font-size: 10px;
+  }
 
-    .time small {
-        font-size: 10px;
-    }
+  .letter {
+    width: 29px;
+    height: 37px;
+    font-size: 18px;
+  }
 
-    .letter {
-        width: 29px;
-        height: 37px;
-        font-size: 18px;
-    }
-
-    .center-photo {
-        width: 150px;
-        height: 150px;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        scroll-behavior: auto !important;
-    }
+  .progress-dot {
+    padding: 7px 8px;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<!-- BIRTHDAY HEADER -->
+<!-- PAGE PROGRESS -->
 
-<header class="hero">
-    <span class="tag">✨ A LITTLE BOX OF HAPPINESS ✨</span>
+<div class="progress-track" id="progressTrack">
+  <span class="progress-dot current">1. Countdown</span>
+  <span class="progress-dot">2. Balloons</span>
+  <span class="progress-dot">3. Letter</span>
+  <span class="progress-dot">4. Cake</span>
+  <span class="progress-dot">5. Surprise</span>
+</div>
+
+
+<!-- =====================================
+     PAGE 1: COUNTDOWN
+====================================== -->
+
+<section class="page active" id="page1">
+
+  <div class="panel">
+
+    <span class="tag">
+      ✨ A LITTLE BOX OF HAPPINESS ✨
+    </span>
 
     <div class="bears">🧸🎀🧸</div>
 
-    <h1>Happy Birthday! 💖</h1>
+    <h1>Happy Birthday<br>
+       Urvashi! 💖</h1>
 
-    <!-- SINGLE CENTERED CIRCULAR PHOTO -->
     <div class="center-photo">
-        <img src="images/birthday.jpg" alt="Birthday girl">
+      <img src="e:\Ronit Note\Birthday\images\Screenshot 2026-01-21 095907.png" alt="Birthday girl">
     </div>
 
-    <h2>To Someone Special 🌸</h2>
+    <p>
+      🧸🎀🧸 A little surprise made with love,
+      just for you! 🧸🎀🧸
+    </p>
 
-    <p>A little surprise made with love, just for you!</p>
-</header>
+  </div>
 
-<main class="container">
+  <div class="panel">
 
-<!-- COUNTDOWN -->
+    <h2>⏳ Birthday Countdown 🎂</h2>
 
-<section class="panel">
-    <h2>🎂 Birthday Countdown 🎂</h2>
+    <p>Every second brings us closer to your special day!</p>
 
     <div class="countdown" id="countdown">
-        <div class="time">
-            <span id="days">00</span>
-            <small>Days</small>
-        </div>
 
-        <div class="time">
-            <span id="hours">00</span>
-            <small>Hours</small>
-        </div>
+      <div class="time">
+        <span id="days">00</span>
+        <small>Days</small>
+      </div>
 
-        <div class="time">
-            <span id="minutes">00</span>
-            <small>Minutes</small>
-        </div>
+      <div class="time">
+        <span id="hours">00</span>
+        <small>Hours</small>
+      </div>
 
-        <div class="time">
-            <span id="seconds">00</span>
-            <small>Seconds</small>
-        </div>
+      <div class="time">
+        <span id="minutes">00</span>
+        <small>Minutes</small>
+      </div>
+
+      <div class="time">
+        <span id="seconds">00</span>
+        <small>Seconds</small>
+      </div>
+
     </div>
 
-    <p id="countdownNote">Every second brings us closer! 💕</p>
-</section>
-
-<!-- BALLOON GAME -->
-
-<section class="panel" id="gamePanel">
-    <h2>🎈 Pop the Balloons! 🎈</h2>
-
-    <p>Pop each balloon to reveal the birthday message, one letter at a time.</p>
-
-    <div id="letterBoxes" aria-live="polite"></div>
-
-    <p id="progress">Ready for your surprise? 💝</p>
-
-    <div id="balloonArea" class="balloon-area">
-        🎈 🎈 🎈
+    <div class="notice" id="countdownNote">
+      🔒 Your birthday surprise is waiting for midnight! 💕
     </div>
 
-    <button class="btn" id="startButton" onclick="startGame()">
-        🎁 Start Surprise
+    <button class="btn"
+            id="countdownNext"
+            disabled
+            onclick="goToPage(2)">
+      🔒 Wait for 12:00 AM
     </button>
 
-    <button class="btn secondary" onclick="resetGame()">
-        🔄 Play Again
-    </button>
+  </div>
 
-    <div id="complete">
-        <div class="bears">🧸💐🧸</div>
-
-        <h1 class="bigTitle">🎉 HAPPY BIRTHDAY! 🎉</h1>
-
-        <p>May your life be filled with love, laughter and beautiful memories. 💖</p>
-
-        <div style="font-size:55px">🎂🎁🎊💝</div>
-
-        <button class="btn" onclick="celebrate()">
-            🎉 Celebration!
-        </button>
-    </div>
 </section>
 
-<!-- BIRTHDAY LETTER -->
 
-<section class="panel">
-    <h2>💌 A Little Birthday Letter</h2>
+<!-- =====================================
+     PAGE 2: BALLOON GAME
+====================================== -->
 
-    <p>There is a special message waiting for you!</p>
+<section class="page" id="page2">
 
-    <button class="btn" onclick="toggleLetter()">
-        💌 Open Letter
+  <div class="panel">
+
+    <div class="bears">🎈🧸🎈</div>
+
+    <h1>Pop the Balloons!</h1>
+
+    <p>
+      Pop the balloons one by one to reveal
+      your birthday message! 💖
+    </p>
+
+    <div id="letterBoxes"></div>
+
+    <p id="balloonProgress">
+      Your balloons are waiting! 🎈
+    </p>
+
+    <div class="balloon-area" id="balloonArea">
+      <p>🎈 Your balloons are ready! 🎈</p>
+    </div>
+
+    <button class="btn"
+            id="startGameButton"
+            onclick="startGame()">
+      🎁 Start Popping
     </button>
 
-    <div id="loveLetter">
-        <div class="letterPaper">
-            <h2>Dear Birthday Star 💖</h2>
+    <div id="balloonComplete" style="display:none">
 
-            <p>
-                May every day bring you a reason to smile, a dream to chase,
-                and someone who reminds you how special you are.
-            </p>
+      <h1 class="big-title">
+        🎉 HAPPY BIRTHDAY! 🎉
+      </h1>
 
-            <p>
-                Keep shining, keep laughing, and never stop being wonderful! 🧸
-            </p>
+      <div class="bears">🧸💐🧸</div>
 
-            <p>Sending you a thousand hugs. 💕</p>
-        </div>
+      <p>
+        All the letters are revealed!
+        Your birthday magic has begun! 💕
+      </p>
+
+      <button class="btn" onclick="goToPage(3)">
+        💌 Open Birthday Letter →
+      </button>
+
     </div>
+
+    <button class="btn secondary" onclick="goToPage(1)">
+      ← Back
+    </button>
+
+  </div>
+
 </section>
 
-<!-- BIRTHDAY WISHES -->
 
-<section class="panel">
-    <h2>🌟 Sweet
+<!-- =====================================
+     PAGE 3: BIRTHDAY LETTER
+====================================== -->
+
+<section class="page" id="page3">
+
+  <div class="panel">
+
+    <div class="bears">💌🧸💖</div>
+
+    <h1>A Letter for You</h1>
+
+    <p>
+      Urvashi, a special message written
+      just for you. 🌸
+    </p>
+
+    <button class="btn"
+            id="openLetterButton"
+            onclick="openLetter()">
+      💌 Open Your Letter
+    </button>
+
+    <div id="birthdayLetter">
+
+      <div class="letter-paper">
+
+        <h2>Dear Urvashi 💖</h2>
+
+        <p>
+          Today is all about you and the happiness
+          you bring into the lives of the people
+          around you.
+        </p>
+
+        <p>
+          May your days be filled with beautiful
+          moments, your heart with endless love,
+          and your dreams with wonderful possibilities.
+        </p>
+
+        <p>
+          Keep smiling, keep shining, and always
+          remember how special you are.
+          May this new year of your life bring
+          you everything your heart wishes for. 🌷
+        </p>
+
+        <p>Radhe Radhe</p>
+        <p>Jay Shree Krishna</p>
+        <p>Jay Jinendra</p>
+
+        <h2 style="text-align:right">
+          With lots of love 💖
+        </h2>
+
+      </div>
+
+      <button class="btn" onclick="goToPage(4)">
+        🎂 Next: Birthday Cake →
+      </button>
+
+    </div>
+
+    <button class="btn secondary" onclick="goToPage(2)">
+      ← Back to Balloons
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================
+     PAGE 4: CAKE AND WISHES
+====================================== -->
+
+<section class="page" id="page4">
+
+  <div class="panel">
+
+    <div class="bears">🎂🧸🎀</div>
+
+    <h1>Make a Birthday Wish!</h1>
+
+    <p>
+      Make a beautiful wish and blow out the candles! ✨
+    </p>
+
+    <div class="cake"
+         id="cake"
+         onclick="blowCandles()">
+      🎂
+    </div>
+
+    <p id="cakeMessage">
+      Tap the cake to make a wish! 🕯️
+    </p>
+
+    <button class="btn" onclick="blowCandles()">
+      💨 Blow Candles
+    </button>
+
+    <button class="btn secondary" onclick="relightCandles()">
+      🕯️ Relight Candles
+    </button>
+
+  </div>
+
+  <div class="panel">
+
+    <h2>🌟 A Sweet Wish for You</h2>
+
+    <div class="quote" id="quote">
+      You make the world a little brighter. 💗
+    </div>
+
+    <button class="btn secondary" onclick="nextQuote()">
+      💬 Next Wish
+    </button>
+
+  </div>
+
+  <div class="panel">
+
+    <p>
+      Ready for the last and most special surprise? 💝
+    </p>
+
+    <button class="btn" onclick="goToPage(5)">
+      🎁 Open Final Surprise →
+    </button>
+
+    <button class="btn secondary" onclick="goToPage(3)">
+      ← Back to Letter
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================
+     PAGE 5: FINAL SURPRISE
+====================================== -->
+
+<section class="page" id="page5">
+
+  <div class="panel">
+
+    <div class="bears">🧸🎀🧸</div>
+
+    <h1>One Last Surprise!</h1>
+
+    <p>
+      Urvashi, this final surprise
+      is made just for you. 💖
+    </p>
+
+    <button class="btn"
+            id="revealButton"
+            onclick="revealFinal()">
+      💝 Reveal My Surprise
+    </button>
+
+    <div id="finalMessage">
+
+      <h1 class="big-title">
+        🎉 HAPPY BIRTHDAY! 🎉
+      </h1>
+
+      <div style="font-size:65px">
+        🎂🎁💐🧸💖
+      </div>
+
+      <h2>Dear Urvashi,</h2>
+
+      <p>
+        May your life always be as beautiful as your smile,
+        as sweet as birthday cake,
+        and as magical as this moment.
+      </p>
+
+      <p>
+        May all your wishes come true,
+        may happiness follow you everywhere,
+        and may you always have a reason to smile. 💕
+      </p>
+
+      <h2>
+        Stay Happy. Stay Blessed. Keep Shining! 🌟
+      </h2>
+
+      <div style="font-size:50px">
+        💖🧸🎊🎀🎉
+      </div>
+
+      <p>
+        Made with lots and lots of love,
+        just for you! 💝
+      </p>
+
+      <button class="btn" onclick="celebrate()">
+        🎊 More Celebration!
+      </button>
+
+    </div>
+
+    <button class="btn secondary" onclick="goToPage(4)">
+      ← Back to Cake
+    </button>
+
+  </div>
+
+</section>
+
+<footer>
+  Made with love, balloons and teddy bears 🧸💕
+</footer>
+
+
+<script>
+
+/* =========================================
+   DECLARE ALL VARIABLES FIRST
+========================================= */
+
+const birthday = new Date(
+  "2026-10-17T00:00:00+05:30"
+).getTime();
+
+let currentPage = 1;
+
+let countdownFinished = Date.now() >= birthday;
+
+const message = "HAPPY BIRTHDAY";
+const lettersOnly = message.replace(/ /g, "");
+
+let nextLetterIndex = 0;
+let gameStarted = false;
+let gameFinished = false;
+
+let letterOpened = false;
+let cakeWished = false;
+
+let quoteIndex = 0;
+
+const balloonColors = [
+  "#ff6096",
+  "#b68aff",
+  "#61c9ed",
+  "#ffb65c",
+  "#ff82c1",
+  "#7eddb0"
+];
+
+const wishes = [
+  "You make the world a little brighter. 💗",
+  "May your dreams bloom into beautiful realities. 🌷",
+  "Sending you the biggest teddy bear hug! 🧸",
+  "You deserve happiness today and every day. 💖",
+  "Keep smiling and shining, birthday star! ✨"
+];
+
+
+/* =========================================
+   PAGE NAVIGATION
+========================================= */
+
+function goToPage(pageNumber) {
+
+  if (pageNumber === 2 && !countdownFinished) {
+    return;
+  }
+
+  if (pageNumber === 3 && !gameFinished) {
+    return;
+  }
+
+  if (pageNumber === 4 && !letterOpened) {
+    return;
+  }
+
+  if (pageNumber === 5 && !cakeWished) {
+    return;
+  }
+
+  document.querySelectorAll(".page").forEach(page => {
+    page.classList.remove("active");
+  });
+
+  document.getElementById(
+    "page" + pageNumber
+  ).classList.add("active");
+
+  currentPage = pageNumber;
+
+  updateProgress();
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
+
+function updateProgress() {
+
+  const labels = [
+    "1. Countdown",
+    "2. Balloons",
+    "3. Letter",
+    "4. Cake",
+    "5. Surprise"
+  ];
+
+  const track = document.getElementById("progressTrack");
+
+  track.innerHTML = "";
+
+  labels.forEach((label, index) => {
+
+    const dot = document.createElement("span");
+
+    dot.className = "progress-dot";
+    dot.textContent = label;
+
+    if (index + 1 === currentPage) {
+      dot.classList.add("current");
+    }
+    else if (index + 1 < currentPage) {
+      dot.classList.add("done");
+    }
+
+    track.appendChild(dot);
+  });
+}
+
+
+/* =========================================
+   PAGE 1: BIRTHDAY COUNTDOWN
+========================================= */
+
+function updateCountdown() {
+
+  const distance = birthday - Date.now();
+
+  if (distance <= 0) {
+
+    countdownFinished = true;
+
+    document.getElementById("countdown").innerHTML =
+      "<h2 style='grid-column:1/-1'>🎉 It's Birthday Time! 🎂</h2>";
+
+    document.getElementById("countdownNote").textContent =
+      "The wait is over! Happy Birthday Devi Urvashi! 💖";
+
+    const nextButton = document.getElementById("countdownNext");
+
+    nextButton.disabled = false;
+
+    nextButton.textContent =
+      "🎈 Start Birthday Surprise →";
+
+    if (!gameStarted && !gameFinished) {
+
+      document.getElementById("balloonProgress").textContent =
+        "🎉 Countdown complete! Start popping balloons!";
+
+      document.getElementById("balloonArea").innerHTML =
+        "<p>🎈 Your balloons are ready! 🎈</p>";
+    }
+
+    return;
+  }
+
+  document.getElementById("days").textContent =
+    Math.floor(distance / 86400000);
+
+  document.getElementById("hours").textContent =
+    Math.floor((distance / 3600000) % 24);
+
+  document.getElementById("minutes").textContent =
+    Math.floor((distance / 60000) % 60);
+
+  document.getElementById("seconds").textContent =
+    Math.floor((distance / 1000) % 60);
+}
+
+
+/* =========================================
+   PAGE 2: BALLOON POPPING GAME
+========================================= */
+
+function startGame() {
+
+  if (!countdownFinished || gameStarted || gameFinished) {
+    return;
+  }
+
+  gameStarted = true;
+
+  document.getElementById("startGameButton").disabled = true;
+
+  makeBalloon();
+}
+
+function makeBalloon() {
+
+  if (!gameStarted || gameFinished) {
+    return;
+  }
+
+  const area = document.getElementById("balloonArea");
+
+  area.innerHTML = "";
+
+  const balloon = document.createElement("button");
+
+  balloon.className = "balloon";
+  balloon.type = "button";
+
+  const color =
+    balloonColors[Math.floor(Math.random() * balloonColors.length)];
+
+  balloon.style.background = color;
+
+  balloon.style.setProperty("--tail", color);
+
+  balloon.setAttribute(
+    "aria-label",
+    "Pop the next balloon"
+  );
+
+  area.appendChild(balloon);
+
+  balloon.addEventListener("click", () => {
+    popBalloon(balloon);
+  }, { once: true });
+
+  document.getElementById("balloonProgress").textContent =
+    "🎈 Balloon " + (nextLetterIndex + 1) +
+    " of " + lettersOnly.length + " — pop it!";
+}
+
+function popBalloon(balloon) {
+
+  if (!gameStarted || gameFinished) {
+    return;
+  }
+
+  balloon.classList.add("pop");
+
+  const letter = lettersOnly[nextLetterIndex];
+
+  const box = document.createElement("span");
+
+  box.className = "letter";
+  box.textContent = letter;
+
+  const boxes = document.getElementById("letterBoxes");
+
+  if (nextLetterIndex === 5) {
+
+    const space = document.createElement("span");
+
+    space.className = "letter space";
+
+    boxes.appendChild(space);
+  }
+
+  boxes.appendChild(box);
+
+  const rect = balloon.getBoundingClientRect();
+
+  burst(
+    rect.left + rect.width / 2,
+    rect.top + rect.height / 2
+  );
+
+  nextLetterIndex++;
+
+  if (nextLetterIndex >= lettersOnly.length) {
+    finishGame();
+  }
+  else {
+
+    document.getElementById("balloonProgress").textContent =
+      "💖 Great! " + nextLetterIndex +
+      " of " + lettersOnly.length +
+      " letters revealed!";
+
+    setTimeout(makeBalloon, 350);
+  }
+}
+
+function finishGame() {
+
+  gameFinished = true;
+  gameStarted = false;
+
+  document.getElementById("balloonProgress").textContent =
+    "🎉 You revealed the complete message: HAPPY BIRTHDAY!";
+
+  document.getElementById("balloonArea").innerHTML =
+    "🎊🎉🎊";
+
+  document.getElementById("startGameButton").style.display =
+    "none";
+
+  document.getElementById("balloonComplete").style.display =
+    "block";
+
+  celebrate();
+}
+
+
+/* =========================================
+   PAGE 3: BIRTHDAY LETTER
+========================================= */
+
+function openLetter() {
+
+  letterOpened = true;
+
+  document.getElementById("birthdayLetter").style.display =
+    "block";
+
+  document.getElementById("openLetterButton").textContent =
+    "💖 Your Letter Is Open!";
+
+  document.getElementById("openLetterButton").disabled =
+    true;
+}
+
+
+/* =========================================
+   PAGE 4: CAKE AND WISHES
+========================================= */
+
+function blowCandles() {
+
+  cakeWished = true;
+
+  document.getElementById("cake").textContent =
+    "🍰";
+
+  document.getElementById("cakeMessage").textContent =
+    "✨ Your wish has been made! May all your dreams come true! 💖";
+
+  celebrate();
+}
+
+function relightCandles() {
+
+  document.getElementById("cake").textContent =
+    "🎂";
+
+  document.getElementById("cakeMessage").textContent =
+    cakeWished
+      ? "Your wish is safe! You can make another one! 🕯️"
+      : "Candles are glowing again. Make a wish! 🕯️";
+}
+
+function nextQuote() {
+
+  quoteIndex = (quoteIndex + 1) % wishes.length;
+
+  document.getElementById("quote").textContent =
+    wishes[quoteIndex];
+}
+
+
+/* =========================================
+   PAGE 5: FINAL SURPRISE
+========================================= */
+
+function revealFinal() {
+
+  document.getElementById("finalMessage").style.display =
+    "block";
+
+  document.getElementById("revealButton").textContent =
+    "💖 Surprise Revealed!";
+
+  document.getElementById("revealButton").disabled =
+    true;
+
+  celebrate();
+
+  document.getElementById("finalMessage").scrollIntoView({
+    behavior: "smooth",
+    block: "center"
+  });
+}
+
+
+/* =========================================
+   CONFETTI AND HEARTS
+========================================= */
+
+function burst(x, y) {
+
+  const symbols = [
+    "💖", "✨", "💕", "⭐", "🎉"
+  ];
+
+  for (let i = 0; i < 10; i++) {
+
+    const element = document.createElement("span");
+
+    element.className = "confetti";
+
+    element.textContent =
+      symbols[Math.floor(Math.random() * symbols.length)];
+
+    element.style.left =
+      (x - 30 + Math.random() * 60) + "px";
+
+    element.style.top =
+      (y - 20 + Math.random() * 40) + "px";
+
+    document.body.appendChild(element);
+
+    setTimeout(() => element.remove(), 3500);
+  }
+}
+
+function celebrate() {
+
+  const symbols = [
+    "💖", "🎉", "🎊", "💕", "✨", "🌸", "⭐"
+  ];
+
+  for (let i = 0; i < 55; i++) {
+
+    const element = document.createElement("span");
+
+    element.className =
+      Math.random() > .5 ? "heart" : "confetti";
+
+    element.textContent =
+      symbols[Math.floor(Math.random() * symbols.length)];
+
+    element.style.left =
+      Math.random() * 100 + "vw";
+
+    element.style.animationDelay =
+      Math.random() + "s";
+
+    element.style.fontSize =
+      (16 + Math.random() * 20) + "px";
+
+    document.body.appendChild(element);
+
+    setTimeout(() => element.remove(), 5500);
+  }
+}
+
+
+/* =========================================
+   INITIALIZE EVERYTHING LAST
+========================================= */
+
+updateProgress();
+
+updateCountdown();
+
+setInterval(updateCountdown, 1000);
+
+</script>
+
+</body>
+</html>
