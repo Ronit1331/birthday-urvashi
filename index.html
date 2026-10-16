@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday, Special One! 🧸💖</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --pink: #ff4f91;
+    --purple: #9b6bff;
+    --ink: #78345e;
+}
+
+body {
+    margin: 0;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    color: var(--ink);
+    text-align: center;
+    background: linear-gradient(135deg, #ffe0ef, #f1e1ff, #e0f6ff);
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+button {
+    font: inherit;
+    cursor: pointer;
+}
+
+.container {
+    max-width: 850px;
+    margin: auto;
+    padding: 20px 13px 45px;
+}
+
+.panel {
+    background: #ffffffd9;
+    border: 2px solid white;
+    border-radius: 24px;
+    padding: 22px 15px;
+    margin: 17px 0;
+    box-shadow: 0 10px 28px #bb6e9d1c;
+}
+
+h1 {
+    font-size: clamp(33px, 8vw, 55px);
+    color: #f03787;
+    text-shadow: 2px 3px white;
+    margin: 13px 0;
+}
+
+h2 {
+    color: #d83f8b;
+}
+
+p {
+    line-height: 1.65;
+}
+
+.hero {
+    padding: 25px 10px 5px;
+}
+
+.tag {
+    display: inline-block;
+    padding: 9px 16px;
+    background: white;
+    border-radius: 25px;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.bears {
+    font-size: 54px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    50% {
+        transform: translateY(-9px);
+    }
+}
+
+.btn {
+    border: 0;
+    border-radius: 30px;
+    padding: 13px 19px;
+    margin: 5px;
+    color: white;
+    background: linear-gradient(120deg, #ff4f91, #a45cff);
+    box-shadow: 0 5px 13px #b55a9b25;
+}
+
+.btn.secondary {
+    background: white;
+    color: #c43c87;
+}
+
+.btn:disabled {
+    opacity: 0.5;
+}
+
+/* CIRCULAR PHOTO FRAME */
+
+.center-photo {
+    width: 170px;
+    height: 170px;
+    margin: 18px auto 22px;
+    border-radius: 50%;
+    padding: 6px;
+    background: linear-gradient(
+        135deg,
+        #ff4f91,
+        #b68aff,
+        #ffd166
+    );
+    box-shadow:
+        0 0 0 5px #ffffffaa,
+        0 10px 30px #d85b9a55;
+    animation: photoGlow 2.5s ease-in-out infinite alternate;
+    overflow: hidden;
+}
+
+.center-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid white;
+}
+
+@keyframes photoGlow {
+    from {
+        transform: scale(1);
+        box-shadow:
+            0 0 0 5px #ffffffaa,
+            0 10px 25px #d85b9a44;
+    }
+
+    to {
+        transform: scale(1.04);
+        box-shadow:
+            0 0 0 7px #ffffffcc,
+            0 12px 35px #d85b9a88;
+    }
+}
+
+/* BIRTHDAY COUNTDOWN */
+
+.countdown {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+
+.time {
+    background: linear-gradient(135deg, #ff79ae, #ad8aff);
+    color: white;
+    border-radius: 15px;
+    padding: 13px 3px;
+}
+
+.time span {
+    display: block;
+    font-size: clamp(23px, 5vw, 33px);
+    font-weight: bold;
+}
+
+.time small {
+    font-size: 12px;
+}
+
+/* BALLOON GAME */
+
+.balloon-area {
+    min-height: 170px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 13px;
+    background: linear-gradient(#eee6ff, #fff0f7);
+    border-radius: 18px;
+    padding: 15px;
+    margin: 15px 0;
+}
+
+.balloon {
+    position: relative;
+    width: 53px;
+    height: 68px;
+    border-radius: 50%;
+    border: 2px solid #ffffffaa;
+    cursor: pointer;
+    box-shadow:
+        inset -7px -5px 10px #00000012,
+        inset 6px 4px 8px #ffffff80;
+    animation: balloonFloat 1.8s ease-in-out infinite alternate;
+    touch-action: manipulation;
+}
+
+.balloon:after {
+    content: "";
+    position: absolute;
+    bottom: -7px;
+    left: 19px;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 9px solid var(--tail);
+}
+
+.balloon.pop {
+    animation: pop 0.2s forwards;
+    pointer-events: none;
+}
+
+@keyframes balloonFloat {
+    to {
+        transform: translateY(-8px) rotate(4deg);
+    }
+}
+
+@keyframes pop {
+    to {
+        transform: scale(1.6);
+        opacity: 0;
+    }
+}
+
+#letterBoxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px;
+}
+
+.letter {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 33px;
+    height: 41px;
+    border-radius: 9px;
+    background: #ffd2e6;
+    color: #bd2875;
+    font-size: 20px;
+    font-weight: bold;
+    animation: appear 0.35s ease;
+}
+
+.letter.space {
+    background: transparent;
+    box-shadow: none;
+    width: 13px;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+#complete {
+    display: none;
+}
+
+.bigTitle {
+    font-size: clamp(30px, 7vw, 48px);
+    color: #ed3486;
+    animation: bounce 1.5s infinite;
+}
+
+/* BIRTHDAY LETTER */
+
+.letterPaper {
+    background: #fff7d9;
+    padding: 22px;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px #a56d8b1c;
+}
+
+#loveLetter,
+#surprise {
+    display: none;
+    animation: appear 0.5s;
+}
+
+/* BIRTHDAY CAKE */
+
+.cake {
+    font-size: 85px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+/* BIRTHDAY WISHES */
+
+.quote {
+    font-size: 18px;
+    min-height: 52px;
+    color: #b23e8a;
+    font-weight: bold;
+}
+
+/* CONFETTI AND HEARTS */
+
+.heart,
+.confetti {
+    position: fixed;
+    pointer-events: none;
+    z-index: 40;
+}
+
+.heart {
+    bottom: -35px;
+    animation: floatUp 4s linear forwards;
+}
+
+.confetti {
+    top: -25px;
+    animation: fall 3.5s linear forwards;
+}
+
+@keyframes floatUp {
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+footer {
+    font-size: 13px;
+    padding: 20px;
+    opacity: 0.75;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 390px) {
+    .panel {
+        padding: 17px 9px;
+    }
+
+    .time small {
+        font-size: 10px;
+    }
+
+    .letter {
+        width: 29px;
+        height: 37px;
+        font-size: 18px;
+    }
+
+    .center-photo {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- BIRTHDAY HEADER -->
+
+<header class="hero">
+    <span class="tag">✨ A LITTLE BOX OF HAPPINESS ✨</span>
+
+    <div class="bears">🧸🎀🧸</div>
+
+    <h1>Happy Birthday! 💖</h1>
+
+    <!-- SINGLE CENTERED CIRCULAR PHOTO -->
+    <div class="center-photo">
+        <img src="images/birthday.jpg" alt="Birthday girl">
+    </div>
+
+    <h2>To Someone Special 🌸</h2>
+
+    <p>A little surprise made with love, just for you!</p>
+</header>
+
+<main class="container">
+
+<!-- COUNTDOWN -->
+
+<section class="panel">
+    <h2>🎂 Birthday Countdown 🎂</h2>
+
+    <div class="countdown" id="countdown">
+        <div class="time">
+            <span id="days">00</span>
+            <small>Days</small>
+        </div>
+
+        <div class="time">
+            <span id="hours">00</span>
+            <small>Hours</small>
+        </div>
+
+        <div class="time">
+            <span id="minutes">00</span>
+            <small>Minutes</small>
+        </div>
+
+        <div class="time">
+            <span id="seconds">00</span>
+            <small>Seconds</small>
+        </div>
+    </div>
+
+    <p id="countdownNote">Every second brings us closer! 💕</p>
+</section>
+
+<!-- BALLOON GAME -->
+
+<section class="panel" id="gamePanel">
+    <h2>🎈 Pop the Balloons! 🎈</h2>
+
+    <p>Pop each balloon to reveal the birthday message, one letter at a time.</p>
+
+    <div id="letterBoxes" aria-live="polite"></div>
+
+    <p id="progress">Ready for your surprise? 💝</p>
+
+    <div id="balloonArea" class="balloon-area">
+        🎈 🎈 🎈
+    </div>
+
+    <button class="btn" id="startButton" onclick="startGame()">
+        🎁 Start Surprise
+    </button>
+
+    <button class="btn secondary" onclick="resetGame()">
+        🔄 Play Again
+    </button>
+
+    <div id="complete">
+        <div class="bears">🧸💐🧸</div>
+
+        <h1 class="bigTitle">🎉 HAPPY BIRTHDAY! 🎉</h1>
+
+        <p>May your life be filled with love, laughter and beautiful memories. 💖</p>
+
+        <div style="font-size:55px">🎂🎁🎊💝</div>
+
+        <button class="btn" onclick="celebrate()">
+            🎉 Celebration!
+        </button>
+    </div>
+</section>
+
+<!-- BIRTHDAY LETTER -->
+
+<section class="panel">
+    <h2>💌 A Little Birthday Letter</h2>
+
+    <p>There is a special message waiting for you!</p>
+
+    <button class="btn" onclick="toggleLetter()">
+        💌 Open Letter
+    </button>
+
+    <div id="loveLetter">
+        <div class="letterPaper">
+            <h2>Dear Birthday Star 💖</h2>
+
+            <p>
+                May every day bring you a reason to smile, a dream to chase,
+                and someone who reminds you how special you are.
+            </p>
+
+            <p>
+                Keep shining, keep laughing, and never stop being wonderful! 🧸
+            </p>
+
+            <p>Sending you a thousand hugs. 💕</p>
+        </div>
+    </div>
+</section>
+
+<!-- BIRTHDAY WISHES -->
+
+<section class="panel">
+    <h2>🌟 Sweet
